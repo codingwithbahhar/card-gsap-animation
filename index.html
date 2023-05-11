@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="next-screen">
+            <svg class="chevron-right-reverse" xmlns="http://www.w3.org/2000/svg" 
+                height="48" viewBox="0 96 960 960" width="48">
+                <path d="M561 816 320 575l241-241 43 43-198 198 198 198-43 43Z"/>
+            </svg>
+        <h1>
+            <span>Portrait</span><br>
+            Photography
+        </h1>
+        <div class="header">
+        </div>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
+                has been the industry's standard dummy text ever since the 1500s, when an unknown 
+                printer took a galley of type and scrambled it to make a type specimen book. 
+                It has survived not only five centuries, but also the leap into electronic typesetting, 
+                remaining essentially unchanged. It was popularised in the 1960s with the release of 
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+          
+        </div>
+        <div class="screen-1">
+            <div class="top">
+                <h1>
+                    <span>Portrait</span><br>
+                    Photography
+                </h1>  
+            </div>
+          <div class="button">
+            <svg class="chevron-right" xmlns="http://www.w3.org/2000/svg" 
+            height="48" viewBox="0 96 960 960" width="48">
+                <path d="m375 816-43-43 198-198-198-198 43-43 241 241-241 241Z"/>
+            </svg>
+        </div>
+         <div class="loading">
+            Fetching Article ... 
+         </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+         integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" 
+         crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script>
+        let button = document.querySelector(".button");
+        let reverse = document.querySelector(".chevron-right-reverse");
+
+        let tl = gsap.timeline({paused:true,reversed:true});
+
+        button.addEventListener("click",(event)=>{
+            tl.play();
+        })
+
+
+        reverse.addEventListener("click",(event)=>{
+            tl.reverse   ();
+        })
+
+        tl.to(".button .chevron-right",{
+            ease:"power1.inOut",
+            rotate:90
+        })
+
+        // screen 1 arrow rotation hide 
+
+        tl.to(".button .chevron-right",{
+            ease:"power1.inOut",
+           duration:0.2,
+           y:-10,
+           opacity:0,
+            
+        }) 
+
+// screen 1 arrow rotation Y axis moving position
+
+        tl.to(".button",{
+            ease:"power1.inOut",
+            yPercent:114,
+        })
+
+// screen 1 height scale transition
+        tl.to(".top",{
+            ease:"power1.inOut",
+            height:380,
+        },
+        0.5);
+
+        tl.to(".top img",{
+            ease:"power1.inOut",
+            yPercent:40
+        },0.8); 
+
+
+        // screen 1 fetching
+
+        tl.to(".button",{
+            ease:"power1.inOut",
+            yPercent:166,
+            borderRadius:0,
+            scaleX:10,
+            scaleY:2.6,
+        },
+        1.1); 
+
+        tl.from(".loading",{
+            ease:"power1.inOut",
+            opacity:0,
+            y:50,
+        }); 
+
+        tl.to(".loading",{
+            ease:"power1.inOut",
+            opacity:0,
+            x:200,
+            delay: 0.5,
+        })
+
+        //next screen bg duration
+
+        tl.from(".next-screen",{
+            ease:"power1.inOut",
+            yPercent:100,
+            duration:.5,
+        })
+
+
+        //next screen top svg Duration
+
+        tl.from(".next-screen svg",{
+            ease:"power1.inOut",
+            xPercent:-250,
+            duration:.5,
+        });
+
+
+        //next screen h1 heading duration
+
+        tl.from(".next-screen h1",{
+            ease:"power1.inOut",
+            scale:0,
+            opacity:0,
+            duration:0.3,
+        });
+
+          //next screen banner duration
+          tl.from(".header",{
+            ease:"power1.inOut",
+            scale:0,
+            opacity:0,
+            duration:0.3,
+        });
+
+
+        //next screen p duration
+
+        tl.from(".next-screen p",{
+            ease:"power1.inOut",
+            scale:0,
+            opacity:0,
+            duration:0.3,
+        });
+
+        tl.to(".container",{
+            ease:"power1.inOut",
+            backgroundColor:"#101010",
+            duration:.1,
+        });
+         // next screen entire section x & y axis duration
+         tl.to(".next-screen",{
+            ease:"power1.inOut",
+            yPercent:-10,
+            duration:1,
+        });
+        tl.to(".next-screen",{
+            ease:"power1.inOut",
+            yPercent:0,
+            duration:1,
+        });
+    </script>
+</body>
+</html>

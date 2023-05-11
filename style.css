@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+body{
+    box-sizing: inherit;
+    font-family: "poppins",sans-serif;
+    line-height: 1.7;
+    position: relative;
+    background-color: #e7f1ee;
+    min-height: 100vh;
+}
+
+.container{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    background-color: #fff;
+    width: 300px;
+    height: 560px;
+    border-radius:30px ;
+    box-shadow: 0 56px 72px -30px rgba(81, 108, 95, 0.45);
+}
+
+.next-screen{
+    position: absolute;
+    background-color: #101010;
+    width: 100%;
+    z-index: 100;
+}
+
+
+.screen-1 .top{
+    position: relative;
+    margin-top: 25px;
+    width: 100%;
+    height: 300px;
+    background: url("bg1.jpg");
+    background-size: cover;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.screen-1{
+    padding: 40px 25px 0 25px;
+}
+
+
+.screen-1 img{
+    height: 16px;
+}
+
+
+.screen-1 .top h1{
+    text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.86);
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding: 40px 20px;
+    line-height: 1;
+    z-index: 1;
+}
+
+
+.screen-1 .top h1 span{
+    font-size: 24px;
+    font-weight: 600;
+
+}
+
+
+.screen-1 .button{
+    position: absolute;
+    left: 50%;
+    bottom:10%;
+    transform: translate(-50%,-50%);
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    width: 42px;
+    height: 42px;
+    background-color: #101010;
+    border-radius: 50%;
+    z-index: 200;
+    cursor: pointer;
+}
+
+
+.screen-1 .button .chevron-right{
+    position: absolute;
+    left: 52% ;
+    top:50%;  
+    transform: translate(-50%,-50%);
+    fill: #fff;
+    height: 30px;
+    width: 30px;
+}
+
+
+.screen-1 .loading{
+    position: absolute;
+    bottom: 16px;
+    font-size: 14px;
+    left: 40px;
+    z-index:210  ;
+    color: #cacaca;
+}
+
+
+
+.next-screen .chevron-right-reverse{
+    width: 30px;
+    height: 30px;
+    fill:#fff;
+    -webkit-tap-highlight-color: rgba(255,255,255,0 );
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+.next-screen h1{
+    color: #fff;
+    line-height:1;
+    padding: 15px;
+}
+
+ .next-screen h1 span{
+    font-size: 24px;
+    font-weight: 600;
+ }
+
+.next-screen .header{
+    width: 200px;
+    height: 200px;
+    
+    background: url('bg1.jpg');
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 20px;
+ }
+
+
+ .header-img{
+    overflow: hidden;
+    width: 100%;
+    height: 150px;
+    border: none;
+    border-radius: 10px;
+ }
+
+
+ .next-screen p{
+    color: #fff;
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1;
+    padding-bottom:25px ;
+    padding: 10px;
+ }
